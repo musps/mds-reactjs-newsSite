@@ -51,6 +51,7 @@ module.exports = {
   devServer: {
     overlay: true,
     contentBase: path.resolve(__dirname, 'build'),
+    historyApiFallback: true,
     compress: false,
     port: 9010
   }
