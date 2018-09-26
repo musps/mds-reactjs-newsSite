@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
 
-const MenuComponent = ({ activeItem, isItemActive, handleOnClickItem }) => (
+const MenuComponent = ({ isItemActive, handleOnClickItem }) => (
   <Menu stackable>
-    <Menu.Item 
-      name='/'
+    <Menu.Item
+      name="/"
       active={isItemActive('/')}
-      onClick={handleOnClickItem}>
+      onClick={handleOnClickItem}
+    >
       Home
     </Menu.Item>
-    <Menu.Item 
-      name='/about'
+    <Menu.Item
+      name="/about"
       active={isItemActive('/about')}
-      onClick={handleOnClickItem}>
+      onClick={handleOnClickItem}
+    >
       About
     </Menu.Item>
   </Menu>
@@ -43,10 +45,9 @@ class MenuContainer extends Component {
     this.props.history.push(name)
   }
 
-  render () {
+  render() {
     return (
       <MenuComponent
-        activeItem={this.state.activeItem}
         isItemActive={this.isItemActive}
         handleOnClickItem={this.handleOnClickItem}
       />

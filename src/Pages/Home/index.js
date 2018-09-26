@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import everythingRequest from './../../utils/requests/everything'
-import ArticlePreview from './../../Components/ArticlePreview'
+import { withRouter } from 'react-router'
+import everythingRequest from '../../Requests/everything'
+import ArticlePreview from '../../Components/ArticlePreview'
 
-const HomePageComponent = ({ articles, onClickReadMore }) => (
-  <div className='homePage'>
-    {articles.map((article, key) =>
+const HomePageComponent = ({ isLoading, articles, onClickReadMore }) => (
+  <div className="homePage">
+    {articles.map((article, key) => (
       <ArticlePreview
         key={key}
         title={article.title}
@@ -13,16 +13,14 @@ const HomePageComponent = ({ articles, onClickReadMore }) => (
         source={article.source.name}
         onClickReadMore={() => (onClickReadMore(article))}
       />
-    )}
+    ))}
   </div>
 )
 
 class HomePage extends Component {
   state = {
-    articles: []
-  }
-  constructor(props) {
-    super(props)
+    articles: [],
+    isLoading: false
   }
 
   componentDidMount() {
@@ -39,18 +37,23 @@ class HomePage extends Component {
   }
 
   async initializeData() {
+    this.setState({ isLoading: true })
     const articles = await everythingRequest()
     this.setState({
-      articles: articles
+      isLoading: false,
+      articles
     })
-    console.log('articles', articles)
   }
 
   render() {
-    const { articles } = this.state
+    const { articles, isLoading } = this.state
 
     return (
-      <HomePageComponent articles={articles} onClickReadMore={this.onClickReadMore} />
+      <HomePageComponent
+        isLoading={isLoading}
+        articles={articles}
+        onClickReadMore={this.onClickReadMore}
+      />
     )
   }
 }
