@@ -15,12 +15,12 @@ class ArticlePage extends Component {
 
   componentWillMount() {
     try {
-      const { article } = this.props.location.state
+      const { article } = this.props.location.state
       let imageHeader = article.urlToImage
       imageHeader = (imageHeader !== null ? imageHeader : defaultImageHeader)
 
       this.setState({
-        imageHeader: imageHeader,
+        imageHeader,
         title: article.title,
         content: article.content,
         source: article.source.name
@@ -31,7 +31,9 @@ class ArticlePage extends Component {
   }
 
   render() {
-    const { imageHeader, title, content, source } = this.state
+    const {
+      imageHeader, title, content, source
+    } = this.state
 
     return (
       <div className="articlePage">

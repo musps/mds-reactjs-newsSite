@@ -6,11 +6,11 @@ import ArticlePreviewShimmer from '../../Components/ArticlePreview/shimmer'
 
 const HomePageComponent = ({ isLoading, articles, onClickReadMore }) => (
   <div className="homePage">
-    {isLoading &&
+    {isLoading && (
       <Fragment>
-      {[...Array(4).keys()].map((item, key) => (<ArticlePreviewShimmer key={key} />))}
+        {[...Array(4).keys()].map((item, key) => (<ArticlePreviewShimmer key={key} />))}
       </Fragment>
-    }
+    )}
 
     {articles.map((article, key) => (
       <ArticlePreview
