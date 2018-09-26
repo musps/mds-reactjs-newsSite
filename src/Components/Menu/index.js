@@ -5,15 +5,15 @@ import { withRouter } from 'react-router'
 const MenuComponent = ({ isItemActive, handleOnClickItem }) => (
   <Menu stackable>
     <Menu.Item
-      name="/mds-reactjs-newsSite/"
-      active={isItemActive('/mds-reactjs-newsSite/')}
+      name="/"
+      active={isItemActive('/')}
       onClick={handleOnClickItem}
     >
       Home
     </Menu.Item>
     <Menu.Item
-      name="/mds-reactjs-newsSite/about"
-      active={isItemActive('/mds-reactjs-newsSite/about')}
+      name="/about"
+      active={isItemActive('/about')}
       onClick={handleOnClickItem}
     >
       About

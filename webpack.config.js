@@ -45,6 +45,10 @@ module.exports = {
       { 
         from: path.resolve(__dirname, 'www/index.html'),
         to: path.resolve(__dirname, 'build/index.html')
+      },
+      { 
+        from: path.resolve(__dirname, 'www/media'),
+        to: path.resolve(__dirname, 'build/media')
       }
     ])
   ],

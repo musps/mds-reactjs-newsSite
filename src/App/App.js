@@ -11,9 +11,9 @@ import ArticlePage from '../Pages/Article'
 
 const Router = () => (
   <Switch>
-    <Route exact path="/mds-reactjs-newsSite/" component={HomePage} />
-    <Route path="/mds-reactjs-newsSite/article" component={ArticlePage} />
-    <Route path="/mds-reactjs-newsSite/about" component={AboutPage} />
+    <Route exact path="/" component={HomePage} />
+    <Route path="/article" component={ArticlePage} />
+    <Route path="/about" component={AboutPage} />
   </Switch>
 )
 
