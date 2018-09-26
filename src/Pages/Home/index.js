@@ -1,10 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router'
 import everythingRequest from '../../Requests/everything'
 import ArticlePreview from '../../Components/ArticlePreview'
+import ArticlePreviewShimmer from '../../Components/ArticlePreview/shimmer'
 
 const HomePageComponent = ({ isLoading, articles, onClickReadMore }) => (
   <div className="homePage">
+    {isLoading &&
+      <Fragment>
+      {[...Array(4).keys()].map((item, key) => (<ArticlePreviewShimmer key={key} />))}
+      </Fragment>
+    }
+
     {articles.map((article, key) => (
       <ArticlePreview
         key={key}
@@ -39,10 +46,13 @@ class HomePage extends Component {
   async initializeData() {
     this.setState({ isLoading: true })
     const articles = await everythingRequest()
-    this.setState({
-      isLoading: false,
-      articles
-    })
+    // Fake bad network loading.
+    setTimeout(() => {
+      this.setState({
+        isLoading: false,
+        articles
+      })
+    }, 1000)
   }
 
   render() {
