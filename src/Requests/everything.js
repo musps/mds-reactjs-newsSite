@@ -6,7 +6,7 @@ const dFrom = '2018-08-26'
 const dLanguage = 'fr'
 
 const buildUri = (sCriteria = dCriteria, sFrom = dFrom, sLanguage = dLanguage) => {
-  const uri = `/v2/everything?q=${sCriteria}&from=${sFrom}&language=${sLanguage}&sortBy=publishedAt`
+  const uri = `/v2/everything?q=${sCriteria}&language=${sLanguage}&sortBy=publishedAt`
   return buildQuery(uri)
 }
 

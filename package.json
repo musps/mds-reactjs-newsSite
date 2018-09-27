@@ -35,11 +35,16 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^0.82.5"
   },
