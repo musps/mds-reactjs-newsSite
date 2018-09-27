@@ -1,9 +1,5 @@
 # mds-reactjs-newsSite
 
-## Demo
-
-* [https://musps.github.io/mds-reactjs-newsSite/](https://musps.github.io/mds-reactjs-newsSite/)
-
 ## Api (https://newsapi.org/)
 
 * [https://newsapi.org/docs/endpoints/everything](https://newsapi.org/docs/endpoints/everything)
